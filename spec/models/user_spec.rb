@@ -3,8 +3,6 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   subject { User.new(name: 'Jon', photo: 'photo.png', bio: 'This is a bio', posts_counter: 0) }
 
-  before { subject.save }
-
   describe 'mainly validation checks ' do
     it 'name should present' do
       expect(subject).to be_valid
