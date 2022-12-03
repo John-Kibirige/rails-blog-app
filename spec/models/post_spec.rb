@@ -54,9 +54,7 @@ RSpec.describe Post, type: :model do
     expect(subject).to be_valid
   end
 
-  it 'cannot update posts counter because it is a private method' do 
+  it 'cannot update posts counter because it is a private method' do
     expect(subject).not_to respond_to(:update_posts_counter)
   end
-
-
 end

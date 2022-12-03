@@ -17,7 +17,7 @@ RSpec.describe Comment, type: :model do
     expect(subject.post.comments_counter).to eq(1)
   end
 
-  it 'cannot update comments counter because it is a private method' do 
+  it 'cannot update comments counter because it is a private method' do
     expect(subject).not_to respond_to(:update_comments_count)
   end
 end
