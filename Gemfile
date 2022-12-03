@@ -58,10 +58,10 @@ group :development do
   gem 'web-console'
 
   # rspec gem
- gem 'rspec-rails' 
- 
- # rubocop linters
- gem 'rubocop', '>= 1.0', '< 2.0'
+  gem 'rspec-rails'
+
+  # rubocop linters
+  gem 'rubocop', '>= 1.0', '< 2.0'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
