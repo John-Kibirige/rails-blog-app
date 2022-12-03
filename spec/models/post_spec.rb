@@ -54,12 +54,9 @@ RSpec.describe Post, type: :model do
     expect(subject).to be_valid
   end
 
-  it 'likes counter should be invalid if its -1' do
-    subject.likes_counter = -1
-    expect(subject).to_not be_valid
+  it 'cannot update posts counter because it is a private method' do 
+    expect(subject).not_to respond_to(:update_posts_counter)
   end
 
-  it 'posts count should return 1' do
-    expect(subject.author.posts_counter).to be_truthy
-  end
+
 end

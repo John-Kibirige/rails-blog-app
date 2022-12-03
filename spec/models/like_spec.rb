@@ -9,11 +9,13 @@ RSpec.describe Like, type: :model do
     @post.save
   end
 
-  subject { Like.new(author_id: @user.id, post_id: @post.id) }
-
-  before { subject.save }
+  subject { Like.create(author: @user, post: @post) }
 
   it 'likes shoulld be increment by 1' do
-    expect(subject.post.likes_counter).to eq(1)
+    expect(@post.likes_counter).to be_truthy
+  end
+
+  it 'cannot update likes count because it is private ' do 
+    expect(subject).not_to respond_to(:update_likes_count)
   end
 end
