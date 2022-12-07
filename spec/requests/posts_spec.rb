@@ -31,6 +31,5 @@ RSpec.describe 'Posts', type: :request do
     it 'should render show' do
       expect(response).to render_template(:show)
     end
-
   end
 end
