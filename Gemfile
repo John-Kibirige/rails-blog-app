@@ -63,6 +63,9 @@ group :development do
   # rubocop linters
   gem 'rubocop', '>= 1.0', '< 2.0'
 
+  # controller testing
+  gem 'rails-controller-testing'
+
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
