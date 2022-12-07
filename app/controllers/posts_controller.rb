@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = "These are the different posts for a particular user "
+    @posts = 'These are the different posts for a particular user '
   end
 
   def show
