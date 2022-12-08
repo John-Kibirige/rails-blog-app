@@ -1,1 +1,29 @@
-<p><%= @user %></p>
+<section>
+  <div>
+      <div>
+          <%= image_tag @user.photo, alt: "#{@user.name}-avatar" %>
+      </div>
+      <div>
+          <h3><%= @user.name %></h3>
+          <span >Number of posts: <%= @user.posts_counter %></span>
+      </div>
+  </div>
+    <hr>
+    <article>
+        <h2>Bio</h2>
+        <p><%= @user.bio %></p>
+        <ul>
+          <% @user.latest_three_posts.each do |post|%>
+            <li>
+              <h3>Post #<%= post.id%></h3>
+              <div>
+                <h4><%= post.title%></h4>
+                <p><%= post.text %></p>
+                <p>Comments: <%= post.comments_counter%>, Likes: <%= post.likes_counter%></p>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+        <button>See all posts</button>
+    </article>
+</section>

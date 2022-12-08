@@ -4,6 +4,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = "These are the details of only one user whose id is #{params[:id]}"
+    @user = User.find(params[:id])
   end
 end
