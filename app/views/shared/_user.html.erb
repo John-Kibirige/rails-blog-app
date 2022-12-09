@@ -1,0 +1,11 @@
+
+<div>
+    <div>
+        <%= image_tag user.photo, atl: "#{user.name}-avatar", class: ""%>
+    </div>
+
+    <div>
+        <h3><%= user.name %></h3>
+        <span>Number of posts <%= user.posts_counter %></span>
+    </div>
+</div>
