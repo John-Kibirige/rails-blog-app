@@ -1,7 +1,8 @@
-<h4>A list of all users </h4>
+<h1 class="users font-bold text-3xl">A list of all users </h1>
+<br>
 <ul>
     <% @users.each do |user| %>
-        <li>
+        <li class="border mb-4 hover:bg-slate-200">
            <%= link_to user_path(user) do %>
                 <%= render "shared/user", user: user %>
            <% end %>
