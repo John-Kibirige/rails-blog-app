@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
   def create
     @comment = Comment.new(params.require(:comment).permit(:text))
     @comment.author = current_user
@@ -11,5 +10,4 @@ class CommentsController < ApplicationController
       render :create
     end
   end
-
-  end
+end

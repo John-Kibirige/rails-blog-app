@@ -16,10 +16,8 @@ class PostsController < ApplicationController
   def create
     all_posts = params[:post]
 
-    Post.create(author: current_user, title: all_posts["title"], text: all_posts["text"])
+    Post.create(author: current_user, title: all_posts['title'], text: all_posts['text'])
 
-    redirect_to user_posts_path, notice: "Successfully created post"
+    redirect_to user_posts_path, notice: 'Successfully created post'
   end
-
-
 end
