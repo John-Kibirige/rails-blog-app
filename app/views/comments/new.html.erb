@@ -1,0 +1,13 @@
+<h1>New Comment</h1>
+
+<%= form_with model: @new_comment, url: user_post_comments_path do |form|%>
+
+    <div class="my-2">
+        <%= form.label :text %> <br>
+        <%= form.text_field :text, placeholder:'comment'%>
+    </div>
+
+    <div">
+       <%= form.submit "Submit ", class: "bg-blue-600 text-white rounded shadow px-3 py-1" %>
+    </div>
+<% end %>
