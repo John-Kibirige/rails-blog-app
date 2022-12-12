@@ -10,14 +10,26 @@ class PostsController < ApplicationController
   end
 
   def new
-    @new_post = Post.new
+    @post = Post.new
   end
 
   def create
-    all_posts = params[:post]
+    @post = Post.new(post_params)
+    @post.author = current_user
 
-    Post.create(author: current_user, title: all_posts['title'], text: all_posts['text'])
+    if @post.save
+      redirect_to user_posts_path
+    else
+      render :new, status: :unprocessable_entity
+    end
 
-    redirect_to user_posts_path, notice: 'Successfully created post'
   end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :text)
+  end
+
+
 end
