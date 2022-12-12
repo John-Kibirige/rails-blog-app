@@ -2,6 +2,10 @@
     <%# user data %>
     <%= render 'shared/user', user: @user%>
 
+    <%= link_to new_user_post_path do%>
+        <button class="uppercase bg-green-600 text-slate-100 text-lg hover:bg-green-500 active:scale-105 ml-auto px-3 py-1 rounded block">Create new post</button>
+    <% end %>
+
     <ul">
        <% @posts.each do |post| %>
         <li class="border list-none mt-4 hover:bg-slate-200 pb-3  pl-2">
@@ -17,6 +21,8 @@
 
     <div class="flex justify-between px-6">
         <button class="bg-slate-500 text-white px-3 py-1 rounded shadow mt-5 hover:bg-slate-600 active:scale-105">Pagination</button>
+
+
     </div>
 
 </section>
