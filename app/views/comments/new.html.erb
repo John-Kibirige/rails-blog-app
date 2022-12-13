@@ -1,10 +1,10 @@
 <h1>New Comment</h1>
 
-<%= form_with model: @new_comment, url: user_post_comments_path do |form|%>
+<%= form_with model: @comment, url: user_post_comments_url do |form|%>
 
     <div class="my-2">
         <%= form.label :text %> <br>
-        <%= form.text_field :text, placeholder:'comment'%>
+        <%= form.text_area :text, placeholder:'comment'%>
     </div>
 
     <div">
