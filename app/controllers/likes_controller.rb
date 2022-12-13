@@ -6,9 +6,12 @@ class LikesController < ApplicationController
 
     if @like.save
       flash[:success] = 'You liked this post!'
-      redirect_back(fallback_location: root_path)
+      redirect_to "/users/#{params[:author_id]}/posts/#{params[:post_id]}"
     else
       flash[:danger] = 'Not able to like this post.'
     end
+
   end
+
+
 end
