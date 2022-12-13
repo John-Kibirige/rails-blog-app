@@ -6,11 +6,11 @@
         <button class="uppercase bg-green-600 text-slate-100 text-lg hover:bg-green-500 active:scale-105 ml-auto px-3 py-1 rounded block">Create new post</button>
     <% end %>
 
-    <ul">
-       <% @posts.each do |post| %>
+    <ul>
+       <% @posts.each_with_index do |post, index| %>
         <li class="border list-none mt-4 hover:bg-slate-200 pb-3  pl-2">
             <%= link_to user_post_path(@user, post) do %>
-                <%= render 'shared/post', post: post%>
+                <%= render 'shared/post', post: post, index: index%>
                 <hr>
                 <%= render 'shared/name_comment', comments: post.retrieve_recent_comments %>
             <% end %>
@@ -21,7 +21,6 @@
 
     <div class="flex justify-between px-6">
         <button class="bg-slate-500 text-white px-3 py-1 rounded shadow mt-5 hover:bg-slate-600 active:scale-105">Pagination</button>
-
 
     </div>
 

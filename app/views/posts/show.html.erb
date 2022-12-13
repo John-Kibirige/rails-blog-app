@@ -1,5 +1,5 @@
 <section>
-    <div class="border">
+    <div class="border mb-8">
         <div class="flex justify-between">
             <h3>Post #<%= @post.id%> by <%=@post.author.name %></h3>
             <%= render 'shared/comments_likes', post:@post%>
@@ -12,5 +12,7 @@
         <%= render 'shared/name_comment', comments: @post.comments %>
     </div>
 
-    <button class="px-3 py-1 bg-blue-600 rounded text-white block mr-auto mt-4 ml-2 mb-2">Add Comment</button>
+
+    <%= link_to "Add comment", "/users/#{@post.author.id}/posts/#{@post.id}/comments/new" , class: "px-3 py-1 bg-blue-600 rounded text-white mt-8 mb-2 w-1/5 block ml-auto"%>
+
 </section>
