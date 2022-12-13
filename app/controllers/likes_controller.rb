@@ -10,8 +10,5 @@ class LikesController < ApplicationController
     else
       flash[:danger] = 'Not able to like this post.'
     end
-
   end
-
-
 end

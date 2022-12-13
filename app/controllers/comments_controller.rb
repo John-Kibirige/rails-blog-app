@@ -14,7 +14,6 @@ class CommentsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-
   end
 
   private
@@ -22,5 +21,4 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:text)
   end
-
 end
