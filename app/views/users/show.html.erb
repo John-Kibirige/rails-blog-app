@@ -10,7 +10,7 @@
         <ul class="border px-4 py-4">
           <% @user.latest_three_posts.each do |post|%>
             <li>
-              <%= render "shared/post", post: post %>
+              <%= render "shared/post", post: post%>
             </li>
           <% end %>
         </ul>

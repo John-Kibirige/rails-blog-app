@@ -1,9 +1,13 @@
 <section>
-    <div class="border">
-        <div class="flex justify-between">
+    <div class="border mb-8 px-3 py-3">
+        <div class="flex justify-between ">
             <h3>Post #<%= @post.id%> by <%=@post.author.name %></h3>
             <%= render 'shared/comments_likes', post:@post%>
         </div>
+        <%= form_with url: "/users/#{@post.author.id}/posts/#{@post.id}/likes" do |form|%>
+            <%= form.submit "like", class: "bg-green-500 text-white rounded shadow px-2 block ml-auto text-lg cursor-pointer"%>
+        <% end %>
+
 
         <p class="mt-5"><%= @post.text %></p>
     </div>
@@ -11,4 +15,8 @@
     <div class="border mt-6">
         <%= render 'shared/name_comment', comments: @post.comments %>
     </div>
+
+
+    <%= link_to "Add comment", "/users/#{@post.author.id}/posts/#{@post.id}/comments/new" , class: "px-3 py-1 bg-blue-600 rounded text-white mt-8 mb-2 w-1/5 block ml-auto"%>
+
 </section>
