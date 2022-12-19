@@ -4,7 +4,7 @@
             <h3>Post #<%= @post.id%> by <%=@post.author.name %></h3>
             <%= render 'shared/comments_likes', post:@post%>
         </div>
-        <%= form_with url: "/users/#{@post.author.id}/posts/#{@post.id}/likes" do |form|%>
+        <%= form_with url: user_post_likes_path(@post.author, @post) do |form|%>
             <%= form.submit "like", class: "bg-green-500 text-white rounded shadow px-2 block ml-auto text-lg cursor-pointer"%>
         <% end %>
 
@@ -17,6 +17,6 @@
     </div>
 
 
-    <%= link_to "Add comment", "/users/#{@post.author.id}/posts/#{@post.id}/comments/new" , class: "px-3 py-1 bg-blue-600 rounded text-white mt-8 mb-2 w-1/5 block ml-auto"%>
+    <%= link_to "Add comment", new_user_post_comment_path(@post.author, @post) , class: "px-3 py-1 bg-blue-600 rounded text-white mt-8 mb-2 w-1/5 block ml-auto"%>
 
 </section>

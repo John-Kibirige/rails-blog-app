@@ -2,7 +2,7 @@
     <%# user data %>
     <%= render 'shared/user', user: @user%>
 
-    <%= link_to "Create new Post", new_user_post_path, class: "uppercase bg-green-600 text-slate-100 text-lg hover:bg-green-500 active:scale-105 ml-auto px-3 py-1 rounded block w-2/5 mt-5 text-center" %>
+    <%= link_to "Create new Post", new_user_post_path(@user), class: "uppercase bg-green-600 text-slate-100 text-lg hover:bg-green-500 active:scale-105 ml-auto px-3 py-1 rounded block w-2/5 mt-5 text-center" %>
 
     <ul>
        <% @posts.each do |post| %>
