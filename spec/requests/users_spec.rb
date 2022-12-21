@@ -23,11 +23,9 @@ RSpec.describe 'Users', type: :request do
   end
 
  context 'GET #show' do
-      user = User.create(name: 'user1', posts_counter: 0)
-      user.save
 
       before :each do
-        get "/users/#{user.id}"
+        get "/users/1"
       end
       it 'show returns a success response' do
         expect(response).to be_successful

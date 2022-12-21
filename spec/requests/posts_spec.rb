@@ -6,7 +6,7 @@ RSpec.describe 'Posts', type: :request do
     user.save
 
     before :each do
-      get "/users/#{user.id}/posts"
+      get "/users/1/posts"
     end
     it 'index returns a success response' do
       expect(response).to be_successful
@@ -26,12 +26,8 @@ RSpec.describe 'Posts', type: :request do
   end
 
   context 'GET #show' do
-    user = User.create(name: 'user1', posts_counter: 0)
-    user.save
-    post = Post.new(title: 'post1', text: 'post testing 1', comments_counter: 1, likes_counter: 0, author_id: user.id)
-    post.save
 
-    before(:each) { get "/users/#{user.id}/posts/#{post.id}" }
+    before(:each) { get "/users/1/posts/1" }
 
     it 'show returns a success response' do
       expect(response).to be_successful
