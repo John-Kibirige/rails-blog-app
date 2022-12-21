@@ -14,29 +14,39 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'renders all users on the page ' do
-      expect(response.body).to include('This is a list of all users')
+      expect(response.body).to include('A list of all users')
+    end
+
+      it 'renders the index template' do
+      expect(response).to render_template(:index)
     end
   end
 
-  describe 'GET /show' do
-    before :each do
-      get '/users/:id'
-    end
+ context 'GET #show' do
+      user = User.create(name: 'user1', posts_counter: 0)
+      user.save
 
-    it 'returns http success' do
-      expect(response).to have_http_status(:success)
-    end
+      before :each do
+        get "/users/#{user.id}"
+      end
+      it 'show returns a success response' do
+        expect(response).to be_successful
+      end
 
-    it 'should return show' do
-      get '/users/5'
-      expect(response).to render_template(:show)
-    end
-  end
+      it 'show returns a 201 response' do
+        expect(response).not_to have_http_status(:created)
+      end
 
-  context 'the right text is being rendered ' do
-    it 'renders all the specifics of a single user based on the id ' do
-      get '/users/1'
-      expect(response.body).to include('These are the details of only one user whose id is 1')
-    end
+      it 'show returns actual template' do
+        expect(response.body).to_not include('<h3>')
+      end
+
+      it 'renders the index template' do
+        expect(response).not_to render_template(:index)
+      end
+
+      it 'renders the index template' do
+        expect(response).to render_template(:show)
+      end
   end
 end

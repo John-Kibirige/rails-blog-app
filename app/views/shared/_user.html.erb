@@ -1,8 +1,8 @@
 
 <div class="flex gap-3">
-    <div>
-        <%= image_tag user.photo, atl: "#{user.name}-avatar", class: "block w-[90px] h-20 rounded-full" %>
-    </div>
+    <% if user.photo %>
+        <img src="<%= user.photo%>" alt= <%="#{user.name}-avatar"%> class="block w-[90px] h-20 rounded-full">
+    <% end %>
 
     <div>
         <h3 class="name text-xl font-bold"><%= user.name %></h3>
