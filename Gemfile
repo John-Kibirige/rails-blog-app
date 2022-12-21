@@ -54,6 +54,9 @@ group :development, :test do
 
   # controller testing
   gem 'rails-controller-testing'
+
+  # database cleaner
+  gem 'database_cleaner'
 end
 
 group :development do
@@ -71,6 +74,9 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  # the bullet gem
+  gem 'bullet'
 end
 
 group :test do
