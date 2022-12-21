@@ -10,7 +10,7 @@
             <%= link_to user_post_path(@user, post) do %>
                 <%= render 'shared/post', post: post%>
                 <hr>
-                <%= render 'shared/name_comment', comments: post.retrieve_recent_comments %>
+                <%= render 'shared/name_comment', comments: post.retrieve_recent_comments.includes([:author]) %>
             <% end %>
         </li>
        <% end %>
