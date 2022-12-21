@@ -54,6 +54,9 @@ group :development, :test do
 
   # controller testing
   gem 'rails-controller-testing'
+
+  # database cleaner
+   gem "database_cleaner"
 end
 
 group :development do
