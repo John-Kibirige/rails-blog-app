@@ -52,7 +52,7 @@ RSpec.describe 'Post index', type: :feature do
   end
 
   it "display a post's title" do
-     expect(page).to have_content(@frank_post.title)
+    expect(page).to have_content(@frank_post.title)
   end
 
   it 'display a post body' do
@@ -73,8 +73,8 @@ RSpec.describe 'Post index', type: :feature do
     expect(page).to have_content("Likes: #{@frank_post.likes_counter}")
   end
 
-   it 'should redirect to post show page when post is clicked' do
-      click_link @frank_post.title
-      expect(page).to have_current_path(user_post_path(@frank, @frank_post))
-    end
+  it 'should redirect to post show page when post is clicked' do
+    click_link @frank_post.title
+    expect(page).to have_current_path(user_post_path(@frank, @frank_post))
+  end
 end

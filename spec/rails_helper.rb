@@ -63,7 +63,7 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
-    config.before(:suite) do
+  config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
   end
 
@@ -85,7 +85,7 @@ RSpec.configure do |config|
 end
 
 Capybara.register_driver :selenium_chrome do |app|
- Capybara::Selenium::Driver.new(app, browser: :chrome)
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
 end
 
 Capybara.javascript_driver = :selenium_chrome

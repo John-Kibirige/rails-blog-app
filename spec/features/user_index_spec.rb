@@ -22,9 +22,9 @@ RSpec.describe "User's", type: :feature do
     end
 
     it 'displays number of posts each user has written' do
-        User.all.each do |user|
-            expect(page).to have_content "Number of posts #{user.posts.size}"
-        end
+      User.all.each do |user|
+        expect(page).to have_content "Number of posts #{user.posts.size}"
+      end
     end
 
     it 'should redirect to posts page when user is clicked' do

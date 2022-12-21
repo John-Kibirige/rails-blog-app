@@ -20,7 +20,7 @@ RSpec.describe 'Specific User', type: :feature do
     end
 
     it 'should have user number of posts' do
-      expect(page).to have_content("Number of posts 2")
+      expect(page).to have_content('Number of posts 2')
     end
 
     it 'should have user bio' do
