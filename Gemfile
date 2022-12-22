@@ -77,6 +77,9 @@ group :development do
 
   # the bullet gem
   gem 'bullet'
+
+  # letter opener
+  gem 'letter_opener'
 end
 
 group :test do
@@ -87,3 +90,6 @@ group :test do
 end
 
 gem 'tailwindcss-rails', '~> 2.0'
+
+# adding devise
+gem 'devise'
